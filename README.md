@@ -1,0 +1,2 @@
+# MovingAverageToKalmanFilter
+単純な移動平均から出発して、カルマンフィルタの考え方を理解する。

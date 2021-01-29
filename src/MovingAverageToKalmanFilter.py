@@ -21,7 +21,7 @@ import matplotlib.pyplot as plt
 # 現時点から離れた時点のデータが入っているのは不自然なので、`x[i-N]`を`MA[i-1]`に置き換える(_modはmodifiedのつもり)。
 # 
 # ```python
-# MA_mod[i] = (1-1/N)*MA_mod[i-1] + x[i]/N 
+# MA_mod[i] = (1-1/N)*MA_mod[i-1] + 1/N*x[i] 
 # ```
 
 # %%

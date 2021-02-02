@@ -99,6 +99,18 @@ plt.show()
 
 
 # %%
+KF02 = KalmanFilter( x , 0.2) 
+KF04 = KalmanFilter( x , 0.4) 
+KF06 = KalmanFilter( x , 0.6) 
+KF08 = KalmanFilter( x , 0.8) 
 
+plt.plot( x , label="Original data" )
+plt.plot( KF02 , label="Gain 0.2" )
+plt.plot( KF04 , label="Gain 0.4" )
+plt.plot( KF06 , label="Gain 0.6" )
+plt.plot( KF08 , label="Gain 0.8" )
+
+plt.legend()
+plt.show()
 
 

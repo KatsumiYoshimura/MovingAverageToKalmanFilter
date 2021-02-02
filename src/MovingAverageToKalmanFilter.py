@@ -73,6 +73,32 @@ plt.show()
 
 
 # %%
+def KalmanFilter( _x_ , _K_ ):
+    _KF_ = np.zeros(len(_x_))
+    _KF_[0] = _x_[0]
+    for i in range(1,len(_x_)):
+        _KF_[i] = (1-_K_)*_KF_[i-1] + _K_*_x_[i]
+
+    return _KF_
+
+
+# %%
+KF = KalmanFilter( x , 1./N) 
+
+
+# %%
+fig, (ax1, ax2) = plt.subplots(2,1)
+
+ax1.plot( MA_mod , label="Modified Moving Average")
+ax1.legend()
+ax2.plot( KF , label="Kalman Filter")
+ax2.legend()
+
+plt.show()
+
+
+
+# %%
 
 
 

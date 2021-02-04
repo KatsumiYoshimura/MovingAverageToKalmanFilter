@@ -15,9 +15,14 @@ import matplotlib.pyplot as plt
 
 # %%
 # 時系列データ
-x = np.zeros(100)
-for i in range(1,len(x)):
-    x[i] = x[i-1] + np.random.normal(loc=0.0,scale=1.0)
+## ランダムウォーク
+## x = np.zeros(100)
+## for i in range(1,len(x)):
+##     x[i] = x[i-1] + np.random.normal(loc=0.0,scale=1.0)
+
+pd_data = pd.read_csv('sample_data.csv',header=None)
+x  = np.array(pd_data[0])
+
 
 # N期間の移動平均を求める
 N = 10
@@ -99,16 +104,14 @@ plt.show()
 
 
 # %%
-KF02 = KalmanFilter( x , 0.2) 
-KF04 = KalmanFilter( x , 0.4) 
-KF06 = KalmanFilter( x , 0.6) 
-KF08 = KalmanFilter( x , 0.8) 
+KF13W = KalmanFilter( x , 0.03) 
+KF26W = KalmanFilter( x , 0.015) 
+KF52W = KalmanFilter( x , 0.007) 
 
 plt.plot( x , label="Original data" )
-plt.plot( KF02 , label="Gain 0.2" )
-plt.plot( KF04 , label="Gain 0.4" )
-plt.plot( KF06 , label="Gain 0.6" )
-plt.plot( KF08 , label="Gain 0.8" )
+plt.plot( KF13W , label="13W KF" )
+plt.plot( KF26W , label="26W KF" )
+plt.plot( KF52W , label="52W KF" )
 
 plt.legend()
 plt.show()

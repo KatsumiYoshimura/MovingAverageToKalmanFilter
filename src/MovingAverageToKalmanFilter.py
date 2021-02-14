@@ -116,4 +116,11 @@ plt.plot( KF52W , label="52W KF" )
 plt.legend()
 plt.show()
 
+# %% [markdown]
+#   最適なN、Kを求める
+# 
 
+# %% [markdown]
+#   [カルマンフィルタの考え方](https://logics-of-blue.com/kalman-filter-concept/)
+#   [カルマンフィルタと最尤法](https://logics-of-blue.com/kalman-filter-mle/)
+# 
